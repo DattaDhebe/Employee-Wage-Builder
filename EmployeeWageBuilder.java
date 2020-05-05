@@ -3,13 +3,9 @@ public class EmpWageBuilder {
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
 
-	
 	private final int EMP_RATE_PER_HOUR = 20;
 	private final int NUM_OF_WORKING_DAYS = 2;
 	private final int MAX_HOURS_IN_MONTH = 10;
-	
-	
-
 	
 	public static int calcEmpWageForCompany(String Company, int empRate, int numOfDays, int maxHrs) {
 	// Variable
@@ -40,11 +36,8 @@ public class EmpWageBuilder {
 		return totalEmpWage;
    }
 	
-	
-	
-
 	public static void main(String[] args) {
-		calcEmpWageForCompany("DAMrt", 20, 2, 10);
+		calcEmpWageForCompany("DMart", 20, 2, 10);
 		calcEmpWageForCompany("Reliance", 10, 4, 20);
 	}
 }
