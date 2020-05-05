@@ -8,12 +8,11 @@ public class EmployeeWageBuilder {
 	private final int MAX_HOURS_IN_MONTH = 10;
 	
 	public static int calcEmpWageForCompany(String Company, int empRate, int numOfDays, int maxHrs) {
-	// Variable
+		// Variable
       int totalEmpWage = 0, totalWorkingDays = 0;
       int totalEmpHrs = 0, empHrs = 0; 
       //Computation
-      while (totalEmpHrs <= maxHrs &&  totalWorkingDays < numOfDays) {
-        
+      while (totalEmpHrs <= maxHrs &&  totalWorkingDays < numOfDays) {       
          totalWorkingDays++;
          int empCheck = (int) Math.floor(Math.random() * 10) % 3;
          switch (empCheck) {
@@ -27,11 +26,10 @@ public class EmployeeWageBuilder {
                empHrs = 0;
          }
       totalEmpHrs +=  empHrs;
-	System.out.println("Days#: " + totalWorkingDays + " Emp Hrs : " +empHrs);
+		System.out.println("Days#: " + totalWorkingDays + " Emp Hrs : " +empHrs);
      }
 	
       totalEmpWage = totalEmpHrs * empRate;
-      //System.out.println("For EveryDay Wage: " + empWage);
    	System.out.println("Total employee Wage for Company " +Company+ " is : " + totalEmpWage);
 		return totalEmpWage;
    }
