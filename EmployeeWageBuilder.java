@@ -1,4 +1,4 @@
-public class EmpWageBuilder {
+public class EmployeeWageBuilder {
 	// Contants
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
@@ -12,7 +12,7 @@ public class EmpWageBuilder {
       int totalEmpWage = 0, totalWorkingDays = 0;
       int totalEmpHrs = 0, empHrs = 0; 
       //Computation
-      while (totalEmpHrs <= maxHrs &&  totalWorkingDays> numOfDays) {
+      while (totalEmpHrs <= maxHrs &&  totalWorkingDays < numOfDays) {
         
          totalWorkingDays++;
          int empCheck = (int) Math.floor(Math.random() * 10) % 3;
@@ -27,12 +27,12 @@ public class EmpWageBuilder {
                empHrs = 0;
          }
       totalEmpHrs +=  empHrs;
-	System.out.println("Days#:" + totalWorkingDays + "Emp hr :" +empHrs);
+	System.out.println("Days#: " + totalWorkingDays + " Emp Hrs : " +empHrs);
      }
 	
       totalEmpWage = totalEmpHrs * empRate;
       //System.out.println("For EveryDay Wage: " + empWage);
-   	System.out.println("Total employee Wage for Company : " +Company+ " is " + totalEmpWage);
+   	System.out.println("Total employee Wage for Company " +Company+ " is : " + totalEmpWage);
 		return totalEmpWage;
    }
 	
