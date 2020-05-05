@@ -36,7 +36,6 @@ public class EmployeeWageBuilder {
      }
 	
       totalEmpWage = totalEmpHrs * empRate;
-   	//System.out.println("Total employee Wage for Company " +Company+ " is : " + totalEmpWage);
    	totalEmpWageForCompany.put(Company, totalEmpWage);
    	System.out.println("Total Employee Wage For Company is : "+totalEmpWageForCompany.get(Company));
 		
