@@ -20,40 +20,40 @@ public class EmployeeWageBuilder {
 	
 	public int calcEmpWageForCompany() {
 		// Variable
-      int totalEmpWage = 0, totalWorkingDays = 0;
-      int totalEmpHrs = 0, empHrs = 0; 
+		int totalEmpWage = 0, totalWorkingDays = 0;
+		int totalEmpHrs = 0, empHrs = 0; 
       
 		//Dictonary to store totalWage for each Company
 		Dictionary<String, Integer> totalEmpWageForCompany = new Hashtable<String, Integer>();
       
-      //Computation
-      while (totalEmpHrs <= maxHrs &&  totalWorkingDays < numOfDays) {       
-         totalWorkingDays++;
-         int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-         switch (empCheck) {
-            case IS_FULL_TIME:
-               empHrs = 8;
-               break;
-            case IS_PART_TIME:
-               empHrs = 4;
-               break;
-            default:
-               empHrs = 0;
-         }
+		//Computation
+		while (totalEmpHrs <= maxHrs &&  totalWorkingDays < numOfDays) {       
+		totalWorkingDays++;
+		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+		switch (empCheck) {
+			case IS_FULL_TIME:
+				empHrs = 8;
+				break;
+			case IS_PART_TIME:
+				empHrs = 4;
+				break;
+			default:
+				empHrs = 0;
+		}
 		totalEmpHrs +=  empHrs;
 		System.out.println("Days#: " + totalWorkingDays + " Emp Hrs : " +empHrs);
-     }
+		}
 	
 		totalEmpWage = totalEmpHrs * empRate;
 		totalEmpWageForCompany.put(Company, totalEmpWage);
 		System.out.println("Total Employee Wage For Company is : "+totalEmpWageForCompany.get(Company));
 		
-   }
+	}
 	
 	public static void main(String[] args) {
-			EmployeeWageBuilder dAMrt = new EmpWageBuilder("DMart", 20, 2, 10);
-			EmployeeWageBuilder reliance = new EmpWageBuilder("Reliance", 10, 4, 20);
-			dAMrt.calcEmpWageForCompany();
-			reliance.calcEmpWageForCompany();
+		EmployeeWageBuilder dAMrt = new EmpWageBuilder("DMart", 20, 2, 10);
+		EmployeeWageBuilder reliance = new EmpWageBuilder("Reliance", 10, 4, 20);
+		dAMrt.calcEmpWageForCompany();
+		reliance.calcEmpWageForCompany();
 	}
 }
