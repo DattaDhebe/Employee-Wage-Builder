@@ -62,6 +62,7 @@ public class EmployeeWageBuilder {
 		companyList.add(new CompanyEmpWage("DMart", 20, 2, 10));
 		companyList.add(new CompanyEmpWage("Reliance", 10, 4, 20));		
 		computeEmpWage(companyList);
+		
 	}
 }
 
