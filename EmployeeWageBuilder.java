@@ -13,6 +13,7 @@ public class EmployeeWageBuilder {
 	//Dictonary to store totalWage for each Company
 	public static final Dictionary<String, Integer> totalEmpWageForCompany = new Hashtable<String, Integer>();
 	
+	
 	public EmployeeWageBuilder(CompanyEmpWage comapny) {
 		this.Company = comapny.Company;
 		this.empRate = comapny.empRate;
@@ -27,7 +28,7 @@ public class EmployeeWageBuilder {
 		}
 	}
 	
-	public int calcEmpWageForCompany() {
+	public void calcEmpWageForCompany() {
 		// Variable
 		int totalEmpWage = 0, totalWorkingDays = 0;
 		int totalEmpHrs = 0, empHrs = 0; 
@@ -52,12 +53,11 @@ public class EmployeeWageBuilder {
 	
 		totalEmpWage = totalEmpHrs * empRate;
 		totalEmpWageForCompany.put(Company, totalEmpWage);
-		System.out.println("Total Employee Wage For Company is : "+totalEmpWageForCompany.get(Company));
-		
-		return 0;
+		System.out.println("Total Employee Wage For "+Company+" is : "+totalEmpWageForCompany.get(Company));
 	}
 	
 	public static void main(String[] args) {
+		
 		ArrayList<CompanyEmpWage> companyList=new ArrayList<CompanyEmpWage>();
 		companyList.add(new CompanyEmpWage("DMart", 20, 2, 10));
 		companyList.add(new CompanyEmpWage("Reliance", 10, 4, 20));		
