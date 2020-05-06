@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.util.*;
 
 public class EmployeeWageBuilder {
@@ -32,7 +31,7 @@ public class EmployeeWageBuilder {
 		// Variable
 		int totalEmpWage = 0, totalWorkingDays = 0;
 		int totalEmpHrs = 0, empHrs = 0; 
-      
+		
 		//Computation
 		while (totalEmpHrs <= maxHrs &&  totalWorkingDays < numOfDays) {       
 		totalWorkingDays++;
@@ -83,28 +82,3 @@ class CompanyEmpWage {
 	}
 }
 
-
-=======
-public class EmpWageBuilderUC1 {
-
-	public static void main(String[] args) {
-		// Contants
-		int IS_FULL_TIME = 1;
-		int EMP_RATE_PER_HOUR = 20;
-		
-		// Variable
-		int empHrs = 0;
-		int empWage = 0;
-		
-		//Computation
-		double empCheck = Math.floor(Math.random() * 10) % 2;
-		if (empCheck == IS_FULL_TIME)
-			empHrs = 8;
-		else
-			empHrs = 0;
-
-		empWage = empHrs * EMP_RATE_PER_HOUR;
-		System.out.println("Emp Wage: " + empWage);
-	}
-}
->>>>>>> 8677592... Refactor. rename file to EmployeeWageBuilder.java
