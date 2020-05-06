@@ -4,6 +4,7 @@ public class EmployeeWageBuilder {
 	// Contants
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
+	public int dailyEmpWage = 0;
 
 	private final String Company;
 	private final int empRate;
@@ -11,8 +12,8 @@ public class EmployeeWageBuilder {
 	private final int maxHrs;
 	
 	//Dictonary to store totalWage for each Company
-	public static final Dictionary<String, Integer> totalEmpWageForCompany = new Hashtable<String, Integer>();
-	
+	public static final Map<String, List<Integer>> totalEmpWageForCompany = new HashMap<String, List<Integer>>();
+	List<Integer> dailyWageAndTotalWage = new ArrayList<Integer>();
 	
 	public EmployeeWageBuilder(CompanyEmpWage comapny) {
 		this.Company = comapny.Company;
@@ -28,7 +29,7 @@ public class EmployeeWageBuilder {
 		}
 	}
 	
-	public void calcEmpWageForCompany() {
+	public int calcEmpWageForCompany() {
 		// Variable
 		int totalEmpWage = 0, totalWorkingDays = 0;
 		int totalEmpHrs = 0, empHrs = 0; 
@@ -48,16 +49,21 @@ public class EmployeeWageBuilder {
 				empHrs = 0;
 		}
 		totalEmpHrs +=  empHrs;
+		dailyEmpWage = empHrs * empRate;
 		System.out.println("Days#: " + totalWorkingDays + " Emp Hrs : " +empHrs);
 		}
 	
 		totalEmpWage = totalEmpHrs * empRate;
-		totalEmpWageForCompany.put(Company, totalEmpWage);
+		dailyWageAndTotalWage.add(dailyEmpWage);
+		dailyWageAndTotalWage.add(totalEmpWage);
+		
+		totalEmpWageForCompany.put(Company, dailyWageAndTotalWage);
 		System.out.println("Total Employee Wage For "+Company+" is : "+totalEmpWageForCompany.get(Company));
+		
+		return 0;
 	}
 	
 	public static void main(String[] args) {
-		
 		ArrayList<CompanyEmpWage> companyList=new ArrayList<CompanyEmpWage>();
 		companyList.add(new CompanyEmpWage("DMart", 20, 2, 10));
 		companyList.add(new CompanyEmpWage("Reliance", 10, 4, 20));		
