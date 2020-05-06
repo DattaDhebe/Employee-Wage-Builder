@@ -31,7 +31,7 @@ public class EmployeeWageBuilder {
 		// Variable
 		int totalEmpWage = 0, totalWorkingDays = 0;
 		int totalEmpHrs = 0, empHrs = 0; 
-      
+		
 		//Computation
 		while (totalEmpHrs <= maxHrs &&  totalWorkingDays < numOfDays) {       
 		totalWorkingDays++;
@@ -62,7 +62,6 @@ public class EmployeeWageBuilder {
 		companyList.add(new CompanyEmpWage("DMart", 20, 2, 10));
 		companyList.add(new CompanyEmpWage("Reliance", 10, 4, 20));		
 		computeEmpWage(companyList);
-		
 	}
 }
 
@@ -81,5 +80,4 @@ class CompanyEmpWage {
 		this.maxHrs=maxHrs;
 	}
 }
-
 
