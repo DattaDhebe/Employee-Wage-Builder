@@ -29,7 +29,7 @@ public class EmployeeWageBuilder {
 		}
 	}
 	
-	public int calcEmpWageForCompany() {
+	public void calcEmpWageForCompany() {
 		// Variable
 		int totalEmpWage = 0, totalWorkingDays = 0;
 		int totalEmpHrs = 0, empHrs = 0; 
@@ -60,7 +60,11 @@ public class EmployeeWageBuilder {
 		totalEmpWageForCompany.put(Company, dailyWageAndTotalWage);
 		System.out.println("Total Employee Wage For "+Company+" is : "+totalEmpWageForCompany.get(Company));
 		
-		return 0;
+	}
+	
+	public static void getTotalWage(String company) {
+		System.out.println("TOtal Wage By company is "+totalEmpWageForCompany.get(company));
+			
 	}
 	
 	public static void main(String[] args) {
@@ -68,6 +72,7 @@ public class EmployeeWageBuilder {
 		companyList.add(new CompanyEmpWage("DMart", 20, 2, 10));
 		companyList.add(new CompanyEmpWage("Reliance", 10, 4, 20));		
 		computeEmpWage(companyList);
+		getTotalWage("Reliance");
 		
 	}
 }
