@@ -5,16 +5,19 @@ public class EmployeeWageBuilder {
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
 
-	private final String COMPANY;
-	private final int EMP_RATE_PER_HOUR;
-	private final int NUM_OF_WORKING_DAYS;
-	private final int MAX_HOURS_IN_MONTH;
+	private final String Company;
+	private final int empRate;
+	private final int numOfDays;
+	private final int maxHrs;
+	
+	//Dictonary to store totalWage for each Company
+	public static final Dictionary<String, Integer> totalEmpWageForCompany = new Hashtable<String, Integer>();
 	
 	public EmployeeWageBuilder(String Company, int empRate, int numOfDays, int maxHrs) {
-		this.COMPANY = Company;
-		this.EMP_RATE_PER_HOUR = empRate;
-		this.NUM_OF_WORKING_DAYS = numOfDays;
-		this.MAX_HOURS_IN_MONTH = maxHrs;
+		this.Company = Company;
+		this.empRate = empRate;
+		this.numOfDays = numOfDays;
+		this.maxHrs = maxHrs;
 	
 	}
 	
@@ -23,8 +26,7 @@ public class EmployeeWageBuilder {
 		int totalEmpWage = 0, totalWorkingDays = 0;
 		int totalEmpHrs = 0, empHrs = 0; 
       
-		//Dictonary to store totalWage for each Company
-		Dictionary<String, Integer> totalEmpWageForCompany = new Hashtable<String, Integer>();
+		
       
 		//Computation
 		while (totalEmpHrs <= maxHrs &&  totalWorkingDays < numOfDays) {       
@@ -48,12 +50,17 @@ public class EmployeeWageBuilder {
 		totalEmpWageForCompany.put(Company, totalEmpWage);
 		System.out.println("Total Employee Wage For Company is : "+totalEmpWageForCompany.get(Company));
 		
+		return 0;
 	}
 	
 	public static void main(String[] args) {
-		EmployeeWageBuilder dAMrt = new EmpWageBuilder("DMart", 20, 2, 10);
-		EmployeeWageBuilder reliance = new EmpWageBuilder("Reliance", 10, 4, 20);
-		dAMrt.calcEmpWageForCompany();
+		EmployeeWageBuilder dMart = new EmployeeWageBuilder("DMart", 20, 2, 10);
+		dMart.calcEmpWageForCompany();
+		EmployeeWageBuilder reliance = new EmployeeWageBuilder("Reliance", 10, 4, 20);		
 		reliance.calcEmpWageForCompany();
+		
 	}
 }
+
+ 
+
